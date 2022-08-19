@@ -59,18 +59,60 @@
       - gender
 
   - travel destinations
-  - last/first minute offers
-  - choice of payment
-  - reviews section
-  - transport type: bus, train, plane
-  - Security rules + Insurance
-  - online chat 
-  - customer travel history + possibility to add places which you already visited
-  - vip/premium customers
-  
+
+### TODO 
+- last/first minute offers
+- reviews section 
+- online chat 
+- customer travel history + possibility to add places which you already visited
+- vip/premium customers
+
 ### Additional features
   - type of the trip(business/family)
   - think about more searching 
     - budget
     - from where and to where in city 
-  
+
+
+### Technical stories
+- provide all available trips (user)
+    - backend
+        - create trip entity
+            - tripStartDate
+            - tripEndDate
+            - destination (clas)
+                - country
+                - city
+            - price
+                - cost (BigDecimal)
+                - currency
+            - transport type (Enum)
+                - bus, train, plane, ferry
+            - security rules (class)
+                - travel restrictions
+                - Insurance
+            - payment type (Enum)
+                - MONEY, CARD, TRANSFER, APPLE PAY, Google Pay, Paypal, installment payment
+            - meal types (Enum)
+                - Breakfasts
+                - Lunches
+                - Dinners
+                - Snacks
+                - Drinks
+                - HB
+                - All inclusive
+            - hotel facilities
+                - attractions (list)
+                - apartment facilities (list)
+            - list of photos urls
+        - trip dto
+        - create TripController (REST)
+            - read all trips - paging by default (default size: 10)
+            - read one trip - by id
+        - create TripService
+        - create TripRepository
+        - handle photos urls (TODO)
+
+    - frontend
+        - cards with trips
+        - some photos
