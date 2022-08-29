@@ -1,13 +1,13 @@
 package com.example.travelagency1.entity;
 
 public enum MealType {
-    BREAKFASTS(""),
-    LUNCHES(""),
-    DINNERS(""),
-    SNACKS(""),
-    DRINKS(""),
+    BREAKFASTS("Morning Food"),
+    LUNCHES("Food for the day"),
+    DINNERS("Food for the Evening"),
+    SNACKS("If you didn't have enough"),
+    DRINKS("Liquid drinks Alcohol/Usual"),
     HB(""),
-    ALL_INCLUDED("");
+    ALL_INCLUDED("Full Service");
 
 
     private final String mealDescription;
