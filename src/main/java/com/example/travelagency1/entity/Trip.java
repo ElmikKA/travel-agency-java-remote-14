@@ -3,6 +3,7 @@ package com.example.travelagency1.entity;
 import lombok.*;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
@@ -25,5 +26,9 @@ public class Trip {
     PaymentType typeOfPayment;
 
     MealType typeOfMeal;
+
+    HotelFacilities hotelFacilities;
+
+    List<String> photos;
 
 }
