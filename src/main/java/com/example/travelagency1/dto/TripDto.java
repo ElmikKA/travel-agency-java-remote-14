@@ -9,20 +9,34 @@ import com.example.travelagency1.entity.enumeration.PaymentType;
 import com.example.travelagency1.entity.enumeration.TransportTypes;
 import lombok.Builder;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
 
 @Builder
 public record TripDto(
         LocalDate tripStartDate,
+
         LocalDate tripEndDate,
-        Destination destination, // TODO: use dto
-        Price tripPrice, // TODO: should we use dto??
+
+        DestinationDto destination,
+
+        //inside dto field can have even different type
+        // because dto is only for data transfer (as json mostly)
+        String  cost,
+
+        String currency,
+
         TransportTypes typeofTransport,
-        SecurityRules securityRules, // TODO; use dto
+
+        SecurityRulesDto securityRules,
+
         PaymentType paymentType,
+
         MealType mealType,
-        HotelFacilities hotelFacilities, // TODO: use dto
+
+        HotelFacilitiesDto hotelFacilities,
+
         List<String> photos
 ) {
 }
