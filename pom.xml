@@ -17,8 +17,5 @@
     <version>0.0.1-SNAPSHOT</version>
     <name>travel-agency-1</name>
     <description>travel-agency-1</description>
-    <properties>
-        <java.version>17</java.version>
-    </properties>
 
 </project>
