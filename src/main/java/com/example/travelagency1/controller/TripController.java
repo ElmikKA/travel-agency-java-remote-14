@@ -1,7 +1,7 @@
 package com.example.travelagency1.controller;
 
-import com.example.travelagency1.entity.Trip;
-import com.example.travelagency1.exception.TripNotFoundException;
+import com.example.travelagency1.converter.TripConverter;
+import com.example.travelagency1.converter.TripDto;
 import com.example.travelagency1.service.TripService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,22 +18,30 @@ public class TripController {
 
     private final TripService tripService;
 
-    public TripController(TripService tripService) {
+    private final TripConverter tripConverter;
+
+    public TripController(TripService tripService, TripConverter tripConverter) {
         this.tripService = tripService;
+        this.tripConverter = tripConverter;
     }
 
     @GetMapping
-    public List<Trip> getAllTrips(){
+    public List<TripDto> getAllTrips(){
         log.info("getting all trips");
 
-        return tripService.findAllTrips();
+        var entities= tripService.findAllTrips();
+        return entities.stream()
+                .map(trip -> tripConverter.fromEntityToDto(trip))
+                .toList();
+
     }
 
     @GetMapping("/{id}")
-    public Trip getTripById(@PathVariable("id") Long id){
+    public TripDto getTripById(@PathVariable("id") Long id){
         log.info("getting trips by id: [{}]", id);
 
 
-        return tripService.findTripByID(id);
+        var entity= tripService.findTripByID(id);
+        return tripConverter.fromEntityToDto(entity);
     }
 }

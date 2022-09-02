@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 public class TripConverter implements Converter<Trip, TripDto> {
 
     @Override
-    public TripDto fromEntityToDo(Trip entity) {
+    public TripDto fromEntityToDto(Trip entity) {
         return null;
     }
 
