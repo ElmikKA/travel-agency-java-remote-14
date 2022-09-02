@@ -1,7 +1,7 @@
 package com.example.travelagency1.controller;
 
 import com.example.travelagency1.converter.TripConverter;
-import com.example.travelagency1.converter.TripDto;
+import com.example.travelagency1.dto.TripDto;
 import com.example.travelagency1.service.TripService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;

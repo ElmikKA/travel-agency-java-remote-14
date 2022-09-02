@@ -1,6 +1,6 @@
 package com.example.travelagency1.converter;
 
-import com.example.travelagency1.dto.ErrorResponse;
+import com.example.travelagency1.dto.TripDto;
 import com.example.travelagency1.entity.Trip;
 import org.springframework.stereotype.Component;
 
