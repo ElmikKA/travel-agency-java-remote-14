@@ -1,4 +1,4 @@
-package com.example.travelagency1.entity;
+package com.example.travelagency1.entity.enumeration;
 
 public enum TransportTypes {
     BUS,
