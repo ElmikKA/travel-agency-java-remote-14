@@ -1,15 +1,10 @@
 package com.example.travelagency1.dto;
 
-import com.example.travelagency1.entity.Destination;
-import com.example.travelagency1.entity.HotelFacilities;
-import com.example.travelagency1.entity.Price;
-import com.example.travelagency1.entity.SecurityRules;
 import com.example.travelagency1.entity.enumeration.MealType;
 import com.example.travelagency1.entity.enumeration.PaymentType;
 import com.example.travelagency1.entity.enumeration.TransportTypes;
 import lombok.Builder;
 
-import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
 

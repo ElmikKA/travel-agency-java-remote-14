@@ -3,7 +3,6 @@ package com.example.travelagency1.controller.advisor;
 import com.example.travelagency1.dto.ErrorResponse;
 import com.example.travelagency1.exception.TripNotFoundException;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
