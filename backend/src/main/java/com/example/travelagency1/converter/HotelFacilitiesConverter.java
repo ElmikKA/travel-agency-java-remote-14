@@ -9,6 +9,8 @@ public class HotelFacilitiesConverter implements Converter<HotelFacilities, Hote
     @Override
     public HotelFacilitiesDto fromEntityToDto(HotelFacilities entity) {
         //TODO
+        //Better than just return null;
+        //throw new NotYetImplementedException();
         return null;
     }
 
