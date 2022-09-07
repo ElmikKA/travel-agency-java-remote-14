@@ -8,13 +8,17 @@ import org.springframework.stereotype.Component;
 public class DestinationConverter implements Converter<Destination, DestinationDto> {
     @Override
     public DestinationDto fromEntityToDto(Destination entity) {
-        //TODO
-        return null;
+
+        return new DestinationDto(entity.getCountry(),
+                entity.getCity(),
+                entity.getHotelName());
     }
 
     @Override
     public Destination fromDoToEntity(DestinationDto dto) {
-        //TODO
-        return null;
+
+        return new Destination(dto.country(),
+                dto.city(),
+                dto.hotelName());
     }
 }

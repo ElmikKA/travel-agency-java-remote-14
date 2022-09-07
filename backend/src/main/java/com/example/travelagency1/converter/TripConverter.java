@@ -39,6 +39,7 @@ public class TripConverter implements Converter<Trip, TripDto> {
 
     @Override
     public Trip fromDoToEntity(TripDto tripDto) {
+        // TODO
         return null;
     }
 }
