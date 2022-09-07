@@ -10,12 +10,12 @@ public class SecurityRulesConverter implements Converter<SecurityRules, Security
     @Override
     public SecurityRulesDto fromEntityToDto(SecurityRules entity) {
         //TODO
-        throw new NotYetImplementedException();
- //       return null;
+
+        return null;
     }
 
     @Override
-    public SecurityRules fromDoToEntity(SecurityRulesDto dto) {
+    public SecurityRules fromDtoToEntity(SecurityRulesDto dto) {
         //TODO
         return null;
     }

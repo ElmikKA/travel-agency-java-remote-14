@@ -4,5 +4,5 @@ public interface Converter<E, D> {
 
     D fromEntityToDto(E entity);
 
-    E fromDoToEntity(D dto);
+    E fromDtoToEntity(D dto);
 }

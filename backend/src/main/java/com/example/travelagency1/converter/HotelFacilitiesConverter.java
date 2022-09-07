@@ -32,17 +32,19 @@ public class HotelFacilitiesConverter implements Converter<HotelFacilities, Hote
     public HotelFacilitiesDto fromEntityToDto(HotelFacilities entity) {
         var attractionsDtos= entity.getAttractions()
                 .stream()
-                .map(attraction -> attractionConverter.fromEntityToDto(attraction))
+                //.map(attraction -> attractionConverter.fromEntityToDto(attraction)
+                .map(attractionConverter::fromEntityToDto)
                 .toList();
 
         return new HotelFacilitiesDto(attractionsDtos, entity.getApartmentFacilities());
     }
 
     @Override
-    public HotelFacilities fromDoToEntity(HotelFacilitiesDto dto) {
+    public HotelFacilities fromDtoToEntity(HotelFacilitiesDto dto) {
         var entities = dto.attractions()
                 .stream()
-                .map(attractionDto -> attractionConverter.fromDoToEntity(attractionDto))
+                //.map(attraction -> attractionConverter.fromDtoToEntity(attraction)
+                .map(attractionConverter::fromDtoToEntity)
                 .toList();
         return new HotelFacilities(entities, dto.apartmentFacilities());
     }
