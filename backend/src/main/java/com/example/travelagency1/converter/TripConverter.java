@@ -1,7 +1,10 @@
 package com.example.travelagency1.converter;
 import com.example.travelagency1.dto.TripDto;
+import com.example.travelagency1.entity.Price;
 import com.example.travelagency1.entity.Trip;
 import org.springframework.stereotype.Component;
+
+import java.math.BigDecimal;
 
 @Component// are called annotations
 public class TripConverter implements Converter<Trip, TripDto> {
@@ -26,7 +29,7 @@ public class TripConverter implements Converter<Trip, TripDto> {
                 .tripStartDate(trip.getTripStartDate())
                 .tripEndDate(trip.getTripEndDate())
                 .destination(destinationDto)
-                .cost(trip.getTripEndDate().toString())
+                .cost(trip.getTripPrice().toString())
                 .currency(trip.getTripPrice().getCurrency())
                 .typeofTransport(trip.getTypeOfTransport())
                 .securityRules(securityRulesDto)
@@ -39,7 +42,23 @@ public class TripConverter implements Converter<Trip, TripDto> {
 
     @Override
     public Trip fromDtoToEntity(TripDto tripDto) {
-        // TODO
-        return null;
+
+        var destinationEntity = destinationConverter.fromDtoToEntity(tripDto.destination());
+        var tripPrice = new Price(new BigDecimal(tripDto.cost()), tripDto.currency());
+        var securityRulesEntity = securityRulesConverter.fromDtoToEntity(tripDto.securityRules());
+        var hotelFacilitiesEntity = hotelFacilitiesConverter.fromDtoToEntity(tripDto.hotelFacilities());
+
+        return Trip.builder()
+                .tripStartDate(tripDto.tripStartDate())
+                .tripEndDate(tripDto.tripEndDate())
+                .destination(destinationEntity)
+                .tripPrice(tripPrice)
+                .typeOfTransport(tripDto.typeofTransport())
+                .rulesOfSecurity(securityRulesEntity)
+                .typeOfPayment(tripDto.paymentType())
+                .typeOfMeal(tripDto.mealType())
+                .hotelFacilities(hotelFacilitiesEntity)
+                .photos(tripDto.photos())
+                .build();
     }
 }
