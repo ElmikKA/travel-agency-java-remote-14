@@ -30,7 +30,7 @@ public class TripConverter implements Converter<Trip, TripDto> {
                 .tripEndDate(trip.getTripEndDate())
                 .destination(destinationDto)
                 .cost(trip.getTripPrice().toString())
-                .cost(trip.getTripPrice().getCurrency())
+                .currency(trip.getTripPrice().getCurrency())
                 .typeofTransport(trip.getTypeOfTransport())
                 .securityRules(securityRulesDto)
                 .paymentType(trip.getTypeOfPayment())
