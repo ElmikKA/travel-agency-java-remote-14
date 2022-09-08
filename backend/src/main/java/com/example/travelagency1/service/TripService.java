@@ -5,7 +5,6 @@ import com.example.travelagency1.exception.TripNotFoundException;
 import com.example.travelagency1.repository.TripRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 
 @Service
