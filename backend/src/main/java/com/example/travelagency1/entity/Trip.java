@@ -48,7 +48,7 @@ public class Trip {
     @Transient
     HotelFacilities hotelFacilities;
 
-    @Transient
+    @ElementCollection//Element collection will make a new collection that we cant modify
     List<String> photos;
 
 }
