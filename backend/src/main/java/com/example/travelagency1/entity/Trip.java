@@ -3,6 +3,7 @@ package com.example.travelagency1.entity;
 import com.example.travelagency1.entity.enumeration.MealType;
 import com.example.travelagency1.entity.enumeration.PaymentType;
 import com.example.travelagency1.entity.enumeration.TransportTypes;
+import jdk.jfr.Enabled;
 import lombok.*;
 
 import javax.persistence.*;
@@ -14,6 +15,7 @@ import java.util.List;
 @Builder
 @Data
 @Entity
+@Table(name = "TRIPS")
 public class Trip {
 
     @Id
@@ -23,11 +25,12 @@ public class Trip {
     LocalDate tripStartDate;
 
     LocalDate tripEndDate;
+
     //dirty fix - ignore that field at the moment
     @Transient//Means that ignore that field
     Destination destination;
 
-    @Transient
+    @Embedded
     Price tripPrice;
 
     @Enumerated(EnumType.STRING)
