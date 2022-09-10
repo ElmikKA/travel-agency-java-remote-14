@@ -4,8 +4,9 @@ const serverUrl = 'http://localhost:8080'
 export const allTripsUrl = `${serverUrl}/api/trips`
 //const allTripsUrlJavaWay = serverUrl + '/api/trips'
 
-//enternal links
+//eternal links
 export const homeUrl = 'home'
 export const defaultUrl = ''
 export const aboutusUrl = 'about-us'
 export const tripsUrl = 'all-trips'
+export const notFound = '**'
