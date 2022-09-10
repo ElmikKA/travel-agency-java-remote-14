@@ -19,7 +19,7 @@ import java.util.List;
 public class Trip {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)//There will be a uniq number given by the database
+    @GeneratedValue(strategy = GenerationType.IDENTITY)//There will be uniq number given by the database
     Long id;
 
     LocalDate tripStartDate;
@@ -36,7 +36,7 @@ public class Trip {
     @Enumerated(EnumType.STRING)
     TransportTypes typeOfTransport;
 
-    @Transient
+    @OneToOne
     SecurityRules rulesOfSecurity;
 
     @Enumerated(EnumType.STRING)
