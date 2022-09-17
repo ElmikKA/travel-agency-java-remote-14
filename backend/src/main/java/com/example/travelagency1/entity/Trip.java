@@ -46,7 +46,7 @@ public class Trip {
     @Enumerated(EnumType.STRING)
     MealType typeOfMeal;
 
-    @Transient
+    @OneToOne
     HotelFacilities hotelFacilities;
 
     @ElementCollection//Element collection will make a new collection that we cant modify
