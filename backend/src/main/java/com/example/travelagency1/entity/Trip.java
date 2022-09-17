@@ -50,6 +50,7 @@ public class Trip {
 
     @ElementCollection//Element collection will make a new collection that we cant modify
     @CollectionTable(name = "PHOTOS")
+    @Column(name = "photo")
     List<String> photos;
 
 }
