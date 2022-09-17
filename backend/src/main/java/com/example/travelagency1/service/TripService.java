@@ -2,8 +2,8 @@ package com.example.travelagency1.service;
 
 import com.example.travelagency1.entity.Trip;
 import com.example.travelagency1.exception.TripNotFoundException;
-import com.example.travelagency1.repository.RealTripRepository;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
 import java.util.List;
 
@@ -11,9 +11,9 @@ import java.util.List;
 @Slf4j
 public class TripService {
 
-    private final RealTripRepository tripRepository;
+    private final JpaRepository<Trip, Long> tripRepository;
 
-    public TripService(RealTripRepository tripRepository) {
+    public TripService(JpaRepository<Trip, Long> tripRepository) {
         this.tripRepository = tripRepository;
     }
 
