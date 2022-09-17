@@ -50,7 +50,7 @@ public class Trip {
     HotelFacilities hotelFacilities;
 
     @ElementCollection//Element collection will make a new collection that we cant modify
-    @CollectionTable(name = "PHOTOS")
+    @CollectionTable(name = "PHOTOS", joinColumns = @JoinColumn(name= "ID_OF_TRIP"))
     @Column(name = "photo")
     List<String> photos;
 
