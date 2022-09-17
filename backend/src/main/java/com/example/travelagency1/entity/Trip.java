@@ -49,6 +49,7 @@ public class Trip {
     HotelFacilities hotelFacilities;
 
     @ElementCollection//Element collection will make a new collection that we cant modify
+    @CollectionTable(name = "PHOTOS")
     List<String> photos;
 
 }
