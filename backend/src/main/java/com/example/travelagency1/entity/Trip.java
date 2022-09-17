@@ -3,7 +3,6 @@ package com.example.travelagency1.entity;
 import com.example.travelagency1.entity.enumeration.MealType;
 import com.example.travelagency1.entity.enumeration.PaymentType;
 import com.example.travelagency1.entity.enumeration.TransportTypes;
-import jdk.jfr.Enabled;
 import lombok.*;
 
 import javax.persistence.*;
@@ -27,7 +26,9 @@ public class Trip {
     LocalDate tripEndDate;
 
     //dirty fix - ignore that field at the moment
-    @Transient//Means that ignore that field
+    //@Transient//Means that ignore that field
+
+    @OneToOne
     Destination destination;
 
     @Embedded
