@@ -4,6 +4,7 @@ import com.example.travelagency1.entity.*;
 import com.example.travelagency1.entity.enumeration.MealType;
 import com.example.travelagency1.entity.enumeration.PaymentType;
 import com.example.travelagency1.entity.enumeration.TransportTypes;
+import com.example.travelagency1.repository.TripRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Profile;
 import org.springframework.data.domain.Example;
@@ -25,7 +26,7 @@ import java.util.function.Function;
 @Profile("develop")
 @Repository
 @Slf4j
-public class FakeTripRepository implements JpaRepository<Trip, Long> {
+public class FakeTripRepository implements TripRepository {
 
     public FakeTripRepository() {
         log.info("fake trip repository was created");
