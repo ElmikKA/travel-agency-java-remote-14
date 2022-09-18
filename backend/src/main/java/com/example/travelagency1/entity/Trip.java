@@ -28,7 +28,7 @@ public class Trip {
     //dirty fix - ignore that field at the moment
     //@Transient//Means that ignore that field
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     Destination destination;
 
     @Embedded
@@ -37,7 +37,7 @@ public class Trip {
     @Enumerated(EnumType.STRING)
     TransportTypes typeOfTransport;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     SecurityRules rulesOfSecurity;
 
     @Enumerated(EnumType.STRING)
@@ -46,7 +46,7 @@ public class Trip {
     @Enumerated(EnumType.STRING)
     MealType typeOfMeal;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     HotelFacilities hotelFacilities;
 
     @ElementCollection//Element collection will make a new collection that we cant modify

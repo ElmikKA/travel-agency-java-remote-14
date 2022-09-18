@@ -17,7 +17,7 @@ public class HotelFacilities {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
 
-    @Transient
+    @OneToMany(cascade = CascadeType.ALL)
     List<Attraction> attractions;
 
     @ElementCollection
