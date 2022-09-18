@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {aboutusUrl, defaultUrl, homeUrl, tripsUrl} from "../../models/urls";
+import {aboutusUrl, defaultUrl, homeUrl, newTripUrl, tripsUrl} from "../../models/urls";
 
 @Component({
   selector: 'app-navigation',
@@ -11,5 +11,6 @@ export class NavigationComponent {
   home = homeUrl
   aboutUs = aboutusUrl
   trips = tripsUrl
+  newTrip = newTripUrl
 
 }
