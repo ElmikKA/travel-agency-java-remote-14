@@ -18,7 +18,7 @@ public interface TripRepository extends JpaRepository<Trip, Long> {
      *     Price tripPrice;
      *
      *     @Enumerated(EnumType.STRING)
-     *     TransportType typeOfTransport;
+     *     TransportType typeOfTransport;s
      *
      *     @OneToOne
      *     SecurityRules securityRules;

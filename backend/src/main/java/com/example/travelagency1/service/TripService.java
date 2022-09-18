@@ -16,7 +16,7 @@ public class TripService {
 
     private final TripRepository tripRepository;
 
-    public TripService(TripRepository  tripRepository) {
+    public TripService(TripRepository tripRepository) {
         this.tripRepository = tripRepository;
     }
 
@@ -26,29 +26,29 @@ public class TripService {
         return tripRepository.findAll();
     }
 
-    //FIXME
-    public Trip findTripByID(Long id) {
+    // FIXME
+    public Trip findTripById(Long id) {
         log.info("finding trip by id: [{}]", id);
 
-        if (id != null){
+        if (id != null) {
             throw new TripNotFoundException("no trip with id: " + id);
         }
         return null;
     }
 
-    //treats all sqls as atomic changes
+    // treats all sqls as atomic changes
     @Transactional
-    public Trip createNewTrip(Trip newTrip){
-        log.info("New trip to save: [{}]", newTrip);
-        //log data
-        //store into datasource
-        //validate fields of newTrip
-        //validate duplicates
-        if (tripRepository.isDuplicateOfOther(newTrip)){
-            throw new TripAlreadyExistsExeptcion("Trip already exists!!!!");
+    public Trip createNewTrip(Trip newTrip) {
+        log.info("new trip to save: [{}]", newTrip);
+        // +log data
+        // +store into datasource
+        // validate fields of newTrip
+        // +validate duplicates
+        if (tripRepository.isDuplicateOfOther(newTrip)) {
+            throw new TripNotFoundException("Trip already exists!!!");
         }
         Trip saved = tripRepository.save(newTrip);
-        log.info("After saving: [{}]", saved);
+        log.info("after saving: [{}]", saved);
         return saved;
     }
 }
