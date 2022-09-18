@@ -5,9 +5,8 @@ import com.example.travelagency1.entity.enumeration.PaymentType;
 import com.example.travelagency1.entity.enumeration.TransportTypes;
 import lombok.Builder;
 
-import javax.validation.constraints.Digits;
+import javax.validation.Valid;
 import javax.validation.constraints.Future;
-import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 import java.util.List;
@@ -20,6 +19,7 @@ public record TripDto(
         @Future
         LocalDate tripEndDate,
 
+        @Valid
         @NotNull
         DestinationDto destination,
 
