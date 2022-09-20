@@ -1,8 +1,8 @@
 <h2>Creating new Trip</h2>
 
-<form [formGroup]="tripForm" (ngSubmit)="submitData()" )>
+<form [formGroup]="tripForm" (ngSubmit)="submitData()">
   <label for="tripStart">Trip Start Date</label>
-  <label id="tripStart" formControlName="trpStartDate"></label>
+  <input id="tripStart" type="text" formControlName="trpStartDate">
   <input type="submit">
 
 </form>

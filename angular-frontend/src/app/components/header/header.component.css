@@ -1,12 +1,14 @@
 .header{
-  background-image: url("src/assets/img/Header-Img.webp");
+  background-image: url("src/assets/img/thumb-1920-830984.jpg");
   background-repeat: no-repeat;
   background-size: cover ;
   padding: 70px 0;
   background-position: center;
 }
 
-h1{
+.welcomeText{
   text-align: center;
-
+  color: aliceblue;
+  font-family: "Lucida Bright", sans-serif;
+  font-size: 40px;
 }
