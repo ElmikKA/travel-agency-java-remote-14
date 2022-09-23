@@ -2,6 +2,7 @@
 //const is like final in java
 const serverUrl = 'http://localhost:8080'
 export const allTripsUrl = `${serverUrl}/api/trips`
+export const createTripUrl = `${serverUrl}/api/trips`
 //const allTripsUrlJavaWay = serverUrl + '/api/trips'
 
 //eternal links

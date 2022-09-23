@@ -7,7 +7,7 @@ public enum MealType {
     SNACKS("If you didn't have enough"),
     DRINKS("Liquid drinks Alcohol/Usual"),
     HB(""),
-    ALL_INCLUDED("Full Service");
+    ALL_INCLUSIVE("Full Service");
 
 
     private final String mealDescription;

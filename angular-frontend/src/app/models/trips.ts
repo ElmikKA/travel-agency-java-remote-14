@@ -1,4 +1,4 @@
-//TODO: refactor same field into enums - the same as backend side
+// TODO: refactor some field into enums - the same as on backend side
 export interface DestinationDto {
   country: string,
   city: string,
@@ -6,7 +6,7 @@ export interface DestinationDto {
 }
 
 export interface SecurityRulesDto {
-  travelRes: string,
+  travelRestrictions: string,
   insurance: string
 }
 
@@ -14,13 +14,11 @@ export interface AttractionDto {
   description: string,
   ageRestrictions: string,
   photos: Array<string>
-
 }
 
 export interface HotelFacilitiesDto {
-  attractions: Array<AttractionDto>
-  apartmentFacilities: Array<string
-    >
+  attractions: Array<AttractionDto>,
+  apartmentFacilities: Array<string>
 }
 
 export interface TripDto {
@@ -29,11 +27,10 @@ export interface TripDto {
   destination: DestinationDto,
   cost: number,
   currency: string,
-  typeofTransport: string,
+  typeOfTransport: string,
   securityRules: SecurityRulesDto,
   paymentType: string,
   mealType: string,
   hotelFacilities: HotelFacilitiesDto,
-  photos: Array<string> //string[] is the same as Array<string>
-
+  photos: Array<string>// string[] is the same as Array<string>
 }
